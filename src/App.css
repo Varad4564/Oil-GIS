@@ -1,0 +1,894 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.flex-div{
+  display: flex;
+  align-items: center;
+  /* padding-top: 500px; */
+  justify-content: center;
+  height: 100vh;
+}
+
+.leaflet-container{
+  /* display: block; */
+  /* The following properties has been overiden below*/
+  width: 80vw; 
+  height: 80vh; 
+}
+
+.popup-info{
+  display: flex;
+  flex-direction: column;
+  height:200px;
+  font-size: 1.5rem;
+}
+
+.index{
+  display: flex;
+  flex-direction: row;
+}
+
+.index p{
+  border: 1px solid black;
+  margin: 0px !important;
+  /* background-color: red; */
+  flex-grow: 1;
+  /* padding: 0px; */
+  text-align: center;
+}
+
+.leaflet-popup-content{
+  width: 250px !important;
+}
+
+.row{
+  display: flex;
+}
+
+.row div{
+  width: 50%;
+  padding: 5px 5px;
+  overflow: auto;
+  border: 1px solid black;
+  position: relative;
+}
+
+.row div:first-child{
+  border-right: 0.25px solid black;
+}
+
+.row div:nth-child(2){
+  border-left: 0.25px solid black;
+}
+
+.row div p{
+  text-wrap:nowrap;
+  overflow-x: auto;
+  margin: 0px;
+  position: relative;
+}
+
+.info-body{
+  overflow-y: auto;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+::-webkit-scrollbar{
+  
+  width: 1px;
+  height: 1px;
+  /* color: brown; */
+} 
+
+::-webkit-scrollbar-track{
+  position: absolute;
+  /* position: absolute;
+  width: 10px; */
+  /* width: 3px; */
+  /* width: 1px; */
+  /* background-color: brown; */
+}
+
+/* ::-webkit-slider-runnable-track{
+  background-color: blue;
+  
+} */
+
+/* The following css will be for Oil India Project*/
+
+.full-screen-map{
+  height: 100vh;
+  width: 100vw;
+}
+
+.small-screen-button{
+  display: flex;
+  background-color: white;
+  border: 2px solid rgb(158, 157, 157);
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:10px;
+  right:10px; 
+  z-index: 1000;
+  padding: 3px;
+}
+
+.small-screen-logo{
+  height: 25px;
+  width: 25px;
+}
+
+.slideup-container {
+  position: absolute;
+  bottom: 0px; /* Adjust as needed */
+  
+  width: 100%; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  border: 1px solid #ccc;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Keep items in a single line */
+  display: flex;
+  transition: 0.3s;
+}
+
+.slideup-container.hidden-slideup{
+  transition:  0.3s;
+  bottom: -200px;
+}
+
+.left-fixed-component{
+  width: 170px;
+  background-color: white;
+  height: 100%;
+  position: fixed;
+  z-index: 2000;
+}
+
+.slideup-scrollable-content {
+  display: flex; /* Use flexbox to arrange items */
+  height: 100%;
+  flex: 0 0 auto;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Keep items in a single line */  
+  margin-left: 170px;
+}
+
+
+.day-wise-data {
+  flex: 0 0 auto; /* Allow items to shrink or grow */
+  width: 250px; /* Set width for each item */
+  height: 100%; /* Set height for each item */
+  background-color: #f0f0f0;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+
+  /* display: inline-flex; */
+  /* align-items: center;
+  justify-content: center; */
+  /* font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px; */
+}
+
+.item:first-child{
+  border-left: 2px solid black;
+}
+
+
+.header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  background-color: #9da4c3;
+  position: relative;
+}
+
+.header img{
+  position: fixed;
+  left: 0;
+  display: block;
+  height: 60px;
+  justify-self: flex-start;
+}
+
+.main-div{
+  height: calc(100vh - 60px);
+  background-color: darksalmon;
+  display: flex;
+}
+
+.sidebar{
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  /* border: 7px solid rgb(224, 224, 224); */
+  border-top: 7px solid rgb(224, 224, 224);
+  border-bottom: 7px solid rgb(224, 224, 224);
+  border-left: 7px solid rgb(224, 224, 224);
+  border-right: 3.5px solid rgb(224, 224, 224);
+  background-color: #c5cbda;
+  position: relative;
+
+  /**/
+  position: fixed;
+  /* height: 100%; */
+  height: calc(100vh - 60px);
+  left:0px;
+  z-index: 30;
+  /* display: none; */
+}
+
+.cross-button{
+  display: none;
+  position:absolute; 
+  top:1px; 
+  right: 1px; 
+  height:15px;
+  width:15px;
+  cursor: pointer;
+}
+
+.sidebar-first-section{
+  height: 30%;
+  /* background-color: bisque; */
+  display: flex;
+  border-bottom: 7px solid rgb(224, 224, 224);
+}
+
+.side-section{
+  width: 45px;
+  height: 100%;
+  background-color: white;
+}
+
+
+.oil-sphere{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 7px solid rgb(224, 224, 224) ;
+}
+
+.oil-sphere-title{
+  padding: 10px;
+}
+
+.location-option-list-outer{
+  padding-bottom: 10px;
+  overflow: auto;
+}
+
+.location-option-list{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow: auto;
+  gap: 10px;
+  /* padding: 10px; */
+}
+
+
+.location-option-div{
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.location-option-div input{
+  height: 20px;
+  width: 20px;
+}
+
+.location-option-div button{
+  border-radius: 10px;
+  border: 3.5px solid rgb(2, 2, 198);
+  padding: 5px 10px;
+  width: 80px;
+  font-weight: 600;
+  color: blue;
+  font-size: 12px;
+  background-color: #c9d2f9;
+}
+
+.sidebar-second-section{
+  height: 30%;
+  background-color: white;
+}
+
+.sidebar-third-section{
+  height: 22%;
+}
+
+.sidebar-last-section{
+  height: 18%;
+  background-color: white;
+}
+
+.administrative-layer{
+  border: 7px solid rgb(224, 224, 224);
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+  background-color: #c5cbda;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  /* overflow-y: scroll; */
+  /* flex-grow: 1; */
+
+  /**/
+  position: fixed;
+  /* height: 100%; */
+  height: calc(100vh - 60px);
+  left: 220px;
+  z-index: 20;
+  /* display: none; */
+}
+
+.adv-title{
+  padding: 5px;
+  position: relative;
+}
+
+.adv-title img{
+  display: none;
+  position:absolute; 
+  top:2.5px; 
+  right:0; 
+  height:15px;
+  width:15px;
+  cursor: pointer;
+}
+
+.scroll-container-2{
+  overflow: auto;
+}
+
+.layers-container{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 5px;
+  /* line-height: 3rem; */
+}
+
+.check-box-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-box-div input{
+  height: 20px;
+  width: 20px ;
+}
+
+.location-transperancy-div{
+  flex-grow: 1;
+  /* font-size: 1.5rem; */
+  font-weight: 600;
+}
+
+
+.transperancy-div{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: auto;
+  background-color: lightgray;
+  /* font-size: 1rem; */
+  font-weight: 200;
+}
+
+.transperancy-div .value-input{
+  width: 2rem;
+}
+
+
+
+
+.functional-div{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* align-items: stretch; */
+
+  /**/
+  z-index: 10;
+  margin-left: 450px;
+  /* margin-left: 0px; */
+}
+
+.toolbar{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 45px;
+  width: 100%;
+  background-color: #c5cbda;
+  border-top: 5px solid rgb(224, 224, 224);
+  border-bottom: 5px solid rgb(224, 224, 224);
+  padding: 0px 5px;
+  gap: 3px;
+}
+
+.toolbar .admin-button{
+  display: none;
+  padding: 2px;
+  border-radius: 50%;
+  height: 30px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.toolbar .sidebar-button{
+  display: none;
+  padding: 2px;
+  border-radius: 5px;
+  height: 25px;
+  cursor: pointer;
+  background-color: white;
+}
+
+/* .toolbar img{
+  display: none;
+  padding: 2px;
+  border-radius: 5px;
+  height: 25px;
+  cursor: pointer;
+  background-color: white;
+} */
+
+
+
+.map-and-chart-container{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  background-color:bisque
+}
+
+.map-stat-container{
+  display: flex;
+  flex-direction: column;
+  /* width: 80%; */
+  flex-grow: 1;
+  align-items: stretch;
+}
+
+.map-holder{
+  flex-grow: 1;
+  position: relative;
+}
+
+.full-screen-button{
+  display: flex;
+  background-color: white;
+  border: 2px solid rgb(158, 157, 157);
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:10px;
+  right:10px; 
+  z-index: 1000;
+  padding: 3px;
+}
+
+.full-screen-logo{
+  height: 20px;
+}
+
+
+.leaflet-container{
+  width: 100%;
+  height: 100%;
+  /* flex-grow: 1; */
+}
+
+
+.stat-container{
+ height: 140px;
+ background-color: ghostwhite;
+}
+
+.coordinates-container{
+  border-top: 2px solid darkgray;
+  border-bottom: 2px solid darkgray;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  padding: 2px;
+  /* height: 20px; */
+  background-color: #e7e7e7;
+  justify-content: space-between;
+}
+
+.coordinates-readings{
+  background-color: white;
+  padding: 1px 6px;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-right: 3px;
+}
+
+/* paddingLeft:"5px", paddingRight:"5px" */
+
+.value-input {
+  width: 50px;
+  height: 30px;
+  padding: 0px 5px;
+}
+
+.chart-container{
+  width: 200px;
+  height: 100%;
+  background-color: black;
+}
+
+
+@media screen and (max-width:1320px){
+
+  .toolbar .admin-button{
+    display: initial;
+  }
+  
+  .adv-title img{
+    display: initial;
+
+  }
+
+  .functional-div{
+    width: calc(100%-220px);
+    margin-left: 220px;
+    transition: 0.8s ease;
+  }
+
+  .functional-div-shrink{
+    /* width: calc(100%); */
+
+    margin-left: 450px;
+    
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    
+  
+    /* align-items: stretch; */
+
+  /**/
+    transition: 0.8s ease;
+    z-index: 10;
+    margin-left: 450px;
+  } 
+
+  .administrative-layer{
+    left:-10px;
+    transition: 0.8s ease;
+  }
+
+  .administrative-layer.active{
+    transition: 0.8s ease;
+    left:220px;
+  }
+
+}
+
+@media screen and (max-width:1080px){
+
+  .cross-button{
+    display: initial;
+  }
+
+
+  .toolbar .sidebar-button{
+    display: initial;
+  }
+
+
+  .sidebar{
+    left: -220px;
+    transition: 0.8s ease;
+  }
+
+  .sidebar.active{
+    transition: 0.8s ease;
+    left:0px;
+  }
+
+  .sidebar.active~ .administrative-layer.active{
+    transition: 0.8s ease;
+    left:220px;
+  } 
+
+  .administrative-layer{
+    left:-230px;
+  } 
+
+  .administrative-layer.active{
+    transition: 0.8s ease;
+    left:0px;
+  }
+
+  .functional-div{
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  
+
+/* 
+  .functional-div{
+    width: calc(100%-220px);
+    margin-left: 220px;
+  }
+*/
+}
+
+@media screen and (max-width:1030px){
+  /* .header{
+    display: block;
+  } */
+  .header h1{
+    margin-left: 120px;
+    /* color: aqua; */
+  }
+}
+
+@media screen and (max-width:860px){
+  /* .header{
+    display: block;
+  } */
+
+  .map-holder {
+    flex-grow: 1;
+    height: calc(100vh - 245px);
+    position: relative;
+  }
+  
+  .chart-container {
+      height: 170px;
+      width: 100%;
+      background-color: black;
+      flex: 0 0 auto;
+  }
+  
+  .map-stat-container {
+      display: flex;
+      flex-direction: column;
+      /* width: 80%; */
+      flex-grow: 1;
+      align-items: stretch;
+      flex: 1 0 auto;
+  }
+  
+  .map-and-chart-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      background-color: bisque;
+      height: 100%;
+      overflow: scroll;
+  }
+}
+
+
+
+
+
+
+
+/* CSS Related to popup began */
+
+.leaflet-popup{
+  width: 250px !important;
+}
+
+.leaflet-popup-content-wrapper{
+  border-radius: unset !important;
+  /* padding: 5px; */
+}
+
+.leaflet-popup-content{
+  margin: 0 !important;
+  margin-top: 15px !important;
+  /* background-color: black; */
+  width: 100% !important;
+  /* color: white; */
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: -6px !important;
+  right: -1px !important;
+  width: 15px !important;
+}
+
+
+
+
+
+.upper-popup-div{
+  padding: 7px;
+  padding-top: 0px;
+}
+
+.lower-popup-div{
+  background-color: #eee;
+  text-align: center;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+
+.leaflet-popup-content p{
+    margin: 0 0 !important;
+    padding: 0.3em 0.3em !important;
+}
+
+.flex-div-popup{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 2px solid#ccc;
+    border-bottom: 0px;
+    flex: 0 0 auto;
+}
+
+/* flex-div-popup p{ */
+    
+/* } */
+
+.flex-div-popup:last-child{
+    border-bottom: 2px solid#ccc;
+}
+
+.flex-div-popup:nth-child(2n){
+    background-color: #eee;
+}
+
+.flex-div-equal-items{
+    /* flex-grow: 1; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: nowrap; */
+    width: 50%;
+    overflow: auto;
+    text-wrap: nowrap;
+    /* flex: 0 0 auto; */
+    /* overflow-x: scroll; */
+    
+}
+
+
+.flex-div-equal-items:first-child{
+    border-right: 2px solid#ccc;
+}
+
+.popup-footer{
+    height: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.3px;
+    /* text-align: center; */
+}
+
+.popup-footer-section1{
+  /* width: 50%; */
+  flex: 1;
+  padding-left: 5px;
+  padding-right: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 50px; */
+}
+.popup-footer-section2{
+  /* background-color: grey; */
+  padding-left: 2px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 50%; */
+  flex: 1;
+}
+
+#popup-footer-close-btn{
+  background-color: rgb(52, 73, 94);
+    border: unset;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    
+    width: 100%;
+}
+
+#popup-footer-delete-btn{
+    background-color: rgb(224, 224, 224);
+    border: unset;
+    cursor: pointer;
+    font-weight: 700;
+    color: #b81b1b;
+    padding: 3px;
+    border-radius: 5px;
+    
+    width: 100%;
+}
+
+#popup-footer-delete-btn:hover{
+    color: #d04e4e;
+}
+
+.display-none-class{
+  display: none;
+}
+
+.popup-vertical-flex{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-height: 85px;
+    overflow-y: scroll;
+}
+
+
+.popup-vertical-flex::-webkit-scrollbar{
+    position: absolute;
+    display: none;
+    width: 4px;
+}
+
+.popup-vertical-flex:hover::-webkit-scrollbar{
+    display: initial;
+    position: absolute;
+    
+}
+
+.popup-vertical-flex::-webkit-scrollbar-track{
+    position: absolute;
+    width: 4px;
+    background-color: #d2d2d2;
+}
+
+.popup-vertical-flex::-webkit-scrollbar-thumb{
+    background-color: #0c111c;
+    width: 4px;
+}
+
+
+.flex-div-equal-items::-webkit-scrollbar{
+    position: absolute;
+    display: none;
+    height: 4px;
+}
+
+.flex-div-equal-items:hover::-webkit-scrollbar{
+    display: initial;
+    position: absolute;
+    
+}
+
+.flex-div-equal-items::-webkit-scrollbar-track{
+    position: absolute;
+    height: 4px;
+    background-color: #d2d2d2;
+}
+
+.flex-div-equal-items::-webkit-scrollbar-thumb{
+    background-color: #0c111c;
+    height: 4px;
+}
+
+/* CSS Related to popup ended */
